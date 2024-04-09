@@ -6,17 +6,17 @@
  * @tree: tree to count the leaves
  * Return: number of leaves in the tree
  */
-size_t binary_tree_leaves(const binary_tree_t *tree)
+size_t binary_tree_leaves(const binary_tree_ttree)
 {
-	size_t count = 0;
-
-	if (!tree)
+	if (tree == NULL)
 	{
 		return (0);
 	}
-	if (!tree->right && !tree->left)
-		return (count + 1);
-	count += binary_tree_leaves(tree->left);
-	count += binary_tree_leaves(tree->right);
-	return (count);
+
+	if (tree->left == NULL && tree->right == NULL)
+	{
+		return (1);
+	}
+
+	return (binary_tree_leaves(tree->left) + binary_tree_leaves(tree->right));
 }
