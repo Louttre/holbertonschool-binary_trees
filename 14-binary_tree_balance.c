@@ -2,24 +2,24 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- *
+ * height_counter - function that count the height of a tree
+ * @tree: pointer to the root of the tree
+ * Return: the height of the tree
  */
+size_t height_counter(const binary_tree_t *tree)
+{
+	size_t left;
+	size_t right;
+
+	if (!tree)
+		return (-1);
+	left = height_counter(tree->left);
+	right = height_counter(tree->right);
+	return (left > right ? left + 1 : right + 1);
+}
 int binary_tree_balance(const binary_tree_t *tree)
 {
-	size_t right = 0, left = 0;
-	
-
-	if(!tree)
+	if (!tree)
 		return (0);
-	if (tree->right)
-	{
-		right += binary_tree_balance(tree->right);
-		return (right + 1);
-	}
-	if (tree->left)
-	{
-		left += binary_tree_balance(tree->left);
-		return (left + 1);
-	}
-	return (left - right);
+	return (height_counter(tree->left) - height_counter(tree->right));
 }
