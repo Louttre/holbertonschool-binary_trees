@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- *
+ * perfect_check - check if tree is perfect
+ * @tree: pointer to the tree to check
+ * Return: number of node if perfect else 0
  */
 int perfect_check(const binary_tree_t *tree)
 {
@@ -15,6 +17,11 @@ int perfect_check(const binary_tree_t *tree)
 	right += perfect_check(tree->right) + 1;
 	return (left == right ? left + right + 1 : 0);
 }
+/**
+ * binary_tree_is_perfect - checks if a binary tree is full
+ * @tree: pointer to the tree
+ * Return: 1 if perfect else 0
+ */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int check;
