@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 #include <stdlib.h>
 /**
- * binary_tree_sibling - checks if a binary tree is perfect
+ * binary_tree_sibling -  finds the sibling of a node
  * @node: pointer to the node
  * Return: pointer to the sibling or NULL
  */
