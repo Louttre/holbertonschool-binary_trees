@@ -15,7 +15,7 @@ size_t height_counter(const binary_tree_t *tree)
 		return (-1);
 	left = height_counter(tree->left);
 	right = height_counter(tree->right);
-	return (left < right ? left + 1 : right + 1);
+	return (left > right ? left + 1 : right + 1);
 }
 /**
  * binary_tree_height - function that count the height of a tree
