@@ -6,7 +6,7 @@
  * @tree: pointer to the root of the tree
  * Return: number of node with at least 1 child
  */
-size_t binary_tree_nodes(const binary_tree_ttree)
+size_t binary_tree_nodes(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 	{
